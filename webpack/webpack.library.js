@@ -35,7 +35,7 @@ module.exports = {
       amd: 'lodash',
       root: '_'
     },
-    vue: 'Vue'
+    vue: 'vue'
   },
   module: {
     rules: [

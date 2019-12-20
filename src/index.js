@@ -1,8 +1,8 @@
-import Vue from 'vue';
+import vue from 'vue';
 import loadings from './loading.vue';
 import { addClass, removeClass, getStyle, afterLeave } from './utils.js';
 
-const __loadings = Vue.extend(loadings);
+const __loadings = vue.extend(loadings);
 
 const defaults = {
   text: "",
@@ -65,7 +65,7 @@ const addStyle = (options, parent, instance) => {
 };
 
 const Loading = (options = {}) => {
-  if (Vue.prototype.$isServer) return;
+  if (vue.prototype.$isServer) return;
   options = Object.assign(defaults, options);
   if (typeof options.target === 'string') {
     options.target = document.querySelector(options.target);
@@ -94,7 +94,7 @@ const Loading = (options = {}) => {
     addClass(parent, '__loading-parent--hidden');
   }
   parent.appendChild(instance.$el);
-  Vue.nextTick(() => {
+  vue.nextTick(() => {
     instance.visible = true;
   });
   if (options.fullscreen) {
